@@ -1,0 +1,25 @@
+[phases.setup]
+# Устанавливаем системные зависимости, необходимые для Puppeteer/Chromium
+nixPkgs = [
+    "chromium",
+    "alsa-lib",
+    "at-spi2-atk",
+    "at-spi2-core",
+    "atk",
+    "cairo",
+    "cups",
+    "dbus",
+    "expat",
+    "fontconfig",
+    "freetype",
+    "gdk-pixbuf",
+    "glib",
+    "graphite2",
+    "gtk3",
+    "harfbuzz",
+    "nspr",
+    "nss",
+    "pango",
+    "pipewire",
+    "udev"
+]
