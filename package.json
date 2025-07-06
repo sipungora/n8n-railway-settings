@@ -1,0 +1,10 @@
+{
+  "name": "n8n-custom-server",
+  "version": "1.0.0",
+  "dependencies": {
+    "n8n": "^1.0.0"
+  },
+  "engines": {
+    "node": "18"
+  }
+}
