@@ -1,6 +1,9 @@
+# nixpacks.toml (Версия 3 - Полная и правильная)
+
 [phases.setup]
-# Устанавливаем системные зависимости, необходимые для Puppeteer/Chromium
+# Шаг 1: Устанавливаем ВСЕ системные пакеты, ВКЛЮЧАЯ Node.js
 nixPkgs = [
+    "nodejs_20", # <-- Ключевое добавление!
     "chromium",
     "alsa-lib",
     "at-spi2-atk",
@@ -24,5 +27,10 @@ nixPkgs = [
     "udev"
 ]
 
+[phases.install]
+# Шаг 2: После того как Node.js установлен, выполняем npm install
+cmds = ["npm install --production"]
+
 [start]
+# Шаг 3: После всех установок, запускаем n8n
 cmd = "n8n"
