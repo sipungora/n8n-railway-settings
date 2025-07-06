@@ -1,36 +1,13 @@
-# nixpacks.toml (Версия 3 - Полная и правильная)
+# nixpacks.toml (Версия 4 - Легкая, с внешним браузером)
 
 [phases.setup]
-# Шаг 1: Устанавливаем ВСЕ системные пакеты, ВКЛЮЧАЯ Node.js
-nixPkgs = [
-    "nodejs_20", # <-- Ключевое добавление!
-    "chromium",
-    "alsa-lib",
-    "at-spi2-atk",
-    "at-spi2-core",
-    "atk",
-    "cairo",
-    "cups",
-    "dbus",
-    "expat",
-    "fontconfig",
-    "freetype",
-    "gdk-pixbuf",
-    "glib",
-    "graphite2",
-    "gtk3",
-    "harfbuzz",
-    "nspr",
-    "nss",
-    "pango",
-    "pipewire",
-    "udev"
-]
+# Шаг 1: Устанавливаем ТОЛЬКО Node.js. Никакого Chromium.
+nixPkgs = ["nodejs_20"]
 
 [phases.install]
-# Шаг 2: После того как Node.js установлен, выполняем npm install
+# Шаг 2: Устанавливаем зависимости из package.json
 cmds = ["npm install --production"]
 
 [start]
-# Шаг 3: После всех установок, запускаем n8n
+# Шаг 3: Запускаем n8n
 cmd = "n8n"
