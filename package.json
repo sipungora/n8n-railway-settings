@@ -2,9 +2,10 @@
   "name": "n8n-custom-server",
   "version": "1.0.0",
   "dependencies": {
-    "n8n": "^1.0.0"
+    "n8n": "^1.x.x",
+    "n8n-nodes-puppeteer": "^1.x.x"
   },
   "engines": {
-    "node": "18"
+    "node": "20"
   }
 }
